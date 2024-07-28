@@ -31,18 +31,7 @@ jobs:
         # aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         role-to-assume: "arn:aws:iam::255945442255:role/GitHubAction-AssumeRoleWithAction"
         role-session-name: GitHub_to_AWS_via_FederatedOIDC
-        # inline-session-policy: >-
-        #   {
-        #     "Version": "2012-10-17",
-        #     "Statement": [
-        #         {
-        #             "Sid": "VisualEditor0",
-        #             "Effect": "Allow",
-        #             "Action": "s3:*",
-        #             "Resource": "*"
-        #         }
-        #     ]
-        #   }
+
     - name: Sts GetCallerIdentity
       run: |
           aws sts get-caller-identity
