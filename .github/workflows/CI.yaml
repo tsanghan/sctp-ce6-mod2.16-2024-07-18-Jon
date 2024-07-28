@@ -29,7 +29,9 @@ jobs:
         # aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         role-to-assume: "arn:aws:iam::255945442255:role/GitHubAction-AssumeRoleWithAction"
         role-session-name: GitHub_to_AWS_via_FederatedOIDC
-
+    - name: Sts GetCallerIdentity
+      run: |
+          aws sts get-caller-identity
 
     - name: Setup TFLint
       uses: terraform-linters/setup-tflint@v4
