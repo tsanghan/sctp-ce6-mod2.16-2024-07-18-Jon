@@ -27,8 +27,6 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v4.0.2
       with:
         aws-region: ${{ vars.AWS_DEFAULT_REGION }}
-        # aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        # aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         role-to-assume: "arn:aws:iam::255945442255:role/GitHubAction-AssumeRoleWithAction"
         role-session-name: GitHub_to_AWS_via_FederatedOIDC
 
